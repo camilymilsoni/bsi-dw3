@@ -1,0 +1,8 @@
+POST http://localhost:40000/calculadora HTTP/1.1
+content-type: application/json
+
+{
+    "num1Par": 4,
+    "num2Par": 2,
+    "operacao": "+"
+}
