@@ -7,13 +7,14 @@ const router = require('./routes/router');
 const app = express();
 const port = 40000;
 
-// app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false, }));
 app.use(express.json());
 
 //@ Utiliza o routerApp configurado em ./routes/route.js
 app.use(router);
 
+
+
 app.listen(port, () => {
-    console.log(`App listening at port ${port}`)
+  console.log(`App listening at port ${port}`)
 })

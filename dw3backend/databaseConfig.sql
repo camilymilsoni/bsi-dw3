@@ -1,20 +1,5 @@
 ----- Cria um banco de dados
-create database dw3;
-
-create table IF NOT EXISTS escola (
-    escolaid bigserial constraint pk_escola PRIMARY KEY,
-    codigo varchar(50) UNIQUE,
-    nome VARCHAR(60),
-    dataabertura date,
-    deleted boolean DEFAULT false
-);
-
-INSERT INTO escola VALUES 
-    (default, 'E001', 'Escola de Tecnologia', '2010-03-15'),
-    (default, 'E002', 'Faculdade de Direito', '2005-08-01'),
-    (default, 'E003', 'Instituto de Letras', '2012-06-20'),
-    (default, 'E004', 'Escola de Negócios', '2018-01-10')
-    ON CONFLICT DO NOTHING;
+-- create database dw3;
 
 create table IF NOT EXISTS cursos (
     cursoid bigserial constraint pk_cursos PRIMARY KEY,
@@ -91,3 +76,4 @@ create table IF NOT EXISTS pedidos (
 insert into pedidos values 
  (default, 234, '2020-01-31', 6891.60, (SELECT clienteid from CLIENTES where codigo = 'CLI01'))
  ON CONFLICT DO NOTHING;
+
